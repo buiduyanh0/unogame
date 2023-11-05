@@ -58,6 +58,31 @@ const Game = (props) => {
         }
     }, [])
 
+    //initialize game state
+    const [gameOver, setGameOver] = useState(true)
+    const [winner, setWinner] = useState('')
+    const [turn, setTurn] = useState('')
+    const [player1Deck, setPlayer1Deck] = useState([])
+    const [player2Deck, setPlayer2Deck] = useState([])
+    const [currentColor, setCurrentColor] = useState('')
+    const [currentNumber, setCurrentNumber] = useState('')
+    const [playedCardsPile, setPlayedCardsPile] = useState([])
+    const [drawCardPile, setDrawCardPile] = useState([])
+
+    const [isChatBoxHidden, setChatBoxHidden] = useState(true)
+    const [isUnoButtonPressed, setUnoButtonPressed] = useState(false)
+    const [isSoundMuted, setSoundMuted] = useState(false)
+    const [isMusicMuted, setMusicMuted] = useState(true)
+
+    const [playBBgMusic, { pause }] = useSound(bgMusic, { loop: true })
+    const [playUnoSound] = useSound(unoSound)
+    const [playShufflingSound] = useSound(shufflingSound)
+    const [playSkipCardSound] = useSound(skipCardSound)
+    const [playDraw2CardSound] = useSound(draw2CardSound)
+    const [playWildCardSound] = useSound(wildCardSound)
+    const [playDraw4CardSound] = useSound(draw4CardSound)
+    const [playGameOverSound] = useSound(gameOverSound)
+    
   return (
     <div>Game</div>
   )
